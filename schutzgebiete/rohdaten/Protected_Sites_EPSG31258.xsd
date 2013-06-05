@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:gmlsf="http://www.opengis.net/gmlsf" xmlns:fme="http://www.safe.com/gml/fme" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.safe.com/gml/fme" elementFormDefault="qualified" version="1.0.0">
+<annotation>
+<appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
+<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
+<gmlsf:GMLProfileSchema>http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd</gmlsf:GMLProfileSchema>
+</appinfo>
+</annotation>
+<import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd"/>
+<import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
+<element name="FeatureCollection" type="fme:FeatureCollectionType" substitutionGroup="gml:_GML"/>
+<complexType name="FeatureCollectionType"><complexContent><extension base="gml:AbstractFeatureType"><sequence minOccurs="0" maxOccurs="unbounded"><element name="featureMember"><complexType><sequence><element ref="gml:_Feature"/></sequence></complexType></element></sequence></extension></complexContent>
+</complexType>
+<element name="Protected_Sites_EPSG31258" type="fme:Protected_Sites_EPSG31258Type" substitutionGroup="gml:_Feature"/>
+<complexType name="Protected_Sites_EPSG31258Type">
+<complexContent>
+<extension base="gml:AbstractFeatureType">
+<sequence>
+<element name="OBJECTID" minOccurs="0" type="integer"/>
+<element name="INSPIREID" minOccurs="0">
+<simpleType>
+<restriction base="string">
+<maxLength value="30"/>
+</restriction>
+</simpleType>
+</element>
+<element name="SITENAME" minOccurs="0">
+<simpleType>
+<restriction base="string">
+<maxLength value="150"/>
+</restriction>
+</simpleType>
+</element>
+<element name="SITEPROTECTIONCLASSIFICATION" minOccurs="0">
+<simpleType>
+<restriction base="string">
+<maxLength value="30"/>
+</restriction>
+</simpleType>
+</element>
+<element name="SITEDESIGNATION" minOccurs="0">
+<simpleType>
+<restriction base="string">
+<maxLength value="150"/>
+</restriction>
+</simpleType>
+</element>
+<element name="LEGALFOUNDATIONDOCUMENT" minOccurs="0">
+<simpleType>
+<restriction base="string">
+<maxLength value="150"/>
+</restriction>
+</simpleType>
+</element>
+<element name="LEGALFOUNDATIONDATE" minOccurs="0">
+<simpleType>
+<restriction base="string">
+<maxLength value="150"/>
+</restriction>
+</simpleType>
+</element>
+<element name="surfaceProperty" type="gml:SurfacePropertyType" minOccurs="0"/>
+<element name="multiSurfaceProperty" type="gml:MultiSurfacePropertyType" minOccurs="0"/>
+</sequence>
+</extension>
+</complexContent>
+</complexType>
+</schema>
